@@ -27,3 +27,9 @@ print(titanic.agg({ 'Age':['min', 'max', 'median', 'skew'],
 
 agg_group_by_cat = titanic[['Sex','Age']].groupby('Sex').mean()
 print(agg_group_by_cat)
+
+print(titanic.groupby('Sex')['Age'].mean())
+
+print(titanic.groupby(['Sex', 'Pclass'])['Fare'].mean())
+
+print(titanic.groupby('Pclass')['Pclass'].count())
